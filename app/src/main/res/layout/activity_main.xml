@@ -8,35 +8,48 @@
     tools:context=".MainActivity">
 
     <ImageView
+        android:src="@drawable/neilsonlogo"
         android:layout_gravity="top"
+        android:padding="15dp"
+        android:scaleType="fitCenter"
         android:id="@+id/neilson_logo"
         android:layout_width="match_parent"
-        android:layout_height="100dp" />
+        android:layout_height="150dp" />
 
     <LinearLayout
-        android:layout_below="@+id/neilson_logo"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
+        android:layout_height="306dp"
+        android:layout_below="@+id/neilson_logo"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/qr_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/scan_qr_code" />
-
+            android:layout_margin="10dp"
+            android:background="@color/colorPrimary"
+            android:padding="25dp"
+            android:text="@string/scan_qr_code"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/take_pic_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/send_an_image" />
+            android:layout_margin="10dp"
+            android:background="@color/colorPrimary"
+            android:padding="25dp"
+            android:text="@string/scan_a_image"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
     </LinearLayout>
 
 
     <LinearLayout
+        android:id="@+id/socialmedia"
         android:layout_alignParentBottom="true"
         android:paddingBottom="10dp"
         android:layout_gravity="bottom"
@@ -47,20 +60,20 @@
         <ImageView
             android:id="@+id/twitter"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:src="@drawable/twitter" />
 
         <ImageView
             android:id="@+id/linkinin"
             android:src="@drawable/linkined"
             android:layout_width="wrap_content"
-            android:layout_height="50dp" />
+            android:layout_height="40dp" />
 
         <ImageView
             android:id="@+id/facebook"
             android:src="@drawable/facebook"
             android:layout_width="wrap_content"
-            android:layout_height="50dp" />
+            android:layout_height="40dp" />
 
     </LinearLayout>
 
