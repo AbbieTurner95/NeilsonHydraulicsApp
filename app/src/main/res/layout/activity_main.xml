@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
     <ImageView
+        android:elevation="4dp"
         android:src="@drawable/neilsonlogo"
         android:layout_gravity="top"
         android:padding="15dp"
@@ -24,6 +25,7 @@
         android:orientation="vertical">
 
         <Button
+            android:elevation="6dp"
             android:id="@+id/qr_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -35,6 +37,7 @@
             android:textSize="20sp" />
 
         <Button
+            android:elevation="6dp"
             android:id="@+id/take_pic_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -58,18 +61,21 @@
         android:layout_height="wrap_content">
 
         <ImageView
+            android:elevation="2dp"
             android:id="@+id/twitter"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:src="@drawable/twitter" />
 
         <ImageView
+            android:elevation="2dp"
             android:id="@+id/linkinin"
             android:src="@drawable/linkined"
             android:layout_width="wrap_content"
             android:layout_height="40dp" />
 
         <ImageView
+            android:elevation="2dp"
             android:id="@+id/facebook"
             android:src="@drawable/facebook"
             android:layout_width="wrap_content"
