@@ -16,6 +16,7 @@
             android:layout_height="80dp"
             android:padding="20dp"
             android:scaleType="fitCenter"
+            android:elevation="2dp"
             android:src="@drawable/neilsonlogo" />
 
         <TextView
@@ -104,6 +105,13 @@
             android:textColor="@color/colorPrimary"
             android:textSize="14sp" />
 
+        <ScrollView
+            android:paddingEnd="5dp"
+            android:paddingStart="5dp"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
         <EditText
             android:id="@+id/qr_info_added"
             android:layout_width="match_parent"
@@ -111,6 +119,8 @@
             android:textSize="16sp"
             android:textColor="@android:color/black"
             android:text="This is where the info pulled from the qr code will be"/>
+
+        </ScrollView>
 
         <TextView
             android:id="@+id/bodytext_header"
@@ -139,6 +149,7 @@
         </ScrollView>
 
         <Button
+            android:elevation="2dp"
             android:background="@color/colorAccent"
             android:textColor="@android:color/white"
             android:textSize="18sp"

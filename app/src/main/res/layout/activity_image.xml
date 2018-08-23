@@ -12,6 +12,7 @@
         android:orientation="vertical">
 
         <ImageView
+            android:elevation="2dp"
             android:layout_width="wrap_content"
             android:layout_height="80dp"
             android:padding="20dp"
@@ -129,6 +130,7 @@
         </ScrollView>
 
         <Button
+            android:elevation="2dp"
             android:background="@color/colorAccent"
             android:textColor="@android:color/white"
             android:textSize="18sp"
