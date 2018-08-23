@@ -59,6 +59,9 @@ public class ImageActivity extends AppCompatActivity {
                 callIntent.setData(Uri.parse("tel:07527433503"));
                 startActivity(callIntent);
                 break;
+
+            case R.id.googlemaps:
+                //OPEN PAGE SHOW NEILSONS ON MAPS
         }
         return super.onOptionsItemSelected(item);
     }

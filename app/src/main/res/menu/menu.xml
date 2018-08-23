@@ -8,4 +8,10 @@
         android:title=""
         app:showAsAction="always" />
 
+    <item
+        android:id="@+id/googlemaps"
+        android:icon="@drawable/ic_place_black_24dp"
+        android:title=""
+        app:showAsAction="always" />
+
 </menu>
