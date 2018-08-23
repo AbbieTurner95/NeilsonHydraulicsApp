@@ -7,7 +7,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.abbieturner.neilsonsapp.R;
@@ -91,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
                 .withListener(new PermissionListener() {
                     @Override
                     public void onPermissionGranted(PermissionGrantedResponse response) {
-                        startActivity(new Intent(getApplicationContext(),QRActivity.class));
+                        startActivity(new Intent(getApplicationContext(),QRScanningActivity.class));
                     }
 
                     @Override
@@ -118,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
 
             //start messaging activity
             Bundle bundle=new Bundle();
-            bundle.putBoolean(QRActivity.IS_BARCODE,false);
+            bundle.putBoolean(QRScanningActivity.IS_BARCODE,false);
             bundle.putString(IMAGE_URL,returnValue.get(0));
             startActivity(new Intent(this,SendMessageActivity.class)
                     .putExtras(bundle));

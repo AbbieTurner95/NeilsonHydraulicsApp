@@ -16,7 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UI.QRActivity" />
+        <activity android:name=".UI.QRScanningActivity" />
         <activity android:name=".UI.SendMessageActivity"></activity>
     </application>
 

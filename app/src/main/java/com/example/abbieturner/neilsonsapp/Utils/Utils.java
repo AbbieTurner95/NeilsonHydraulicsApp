@@ -13,6 +13,8 @@ import android.widget.EditText;
 import com.example.abbieturner.neilsonsapp.R;
 
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Utils {
 
@@ -88,6 +90,23 @@ public class Utils {
     public static final boolean checkError(EditText editText) {
         if (!isValid(editText.getText().toString())) {
             editText.setError(editText.getContext().getString(R.string.empty_field));
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean isEmailValid(String email) {
+        boolean isValid = false;
+
+        String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
+        Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+
+    public static final boolean checkEmail(EditText email) {
+        if (!isEmailValid(email.getText().toString())) {
+            email.setError("Check Email Address is correct");
             return false;
         }
         return true;

@@ -1,14 +1,10 @@
 package com.example.abbieturner.neilsonsapp.UI;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.SparseArray;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.abbieturner.neilsonsapp.R;
@@ -16,16 +12,14 @@ import com.google.android.gms.vision.barcode.Barcode;
 
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import info.androidhive.barcode.BarcodeReader;
 
-public class QRActivity extends AppCompatActivity implements BarcodeReader.BarcodeReaderListener {
+public class QRScanningActivity extends AppCompatActivity implements BarcodeReader.BarcodeReaderListener {
 
     private BarcodeReader barcodeReader;
 
     //Rec Var
-    public static final String TAG=QRActivity.class.getSimpleName();
+    public static final String TAG=QRScanningActivity.class.getSimpleName();
     public static final String BARCODE_RESULT="barcode_result";
     public static final String IS_BARCODE="is_barcode";
 
