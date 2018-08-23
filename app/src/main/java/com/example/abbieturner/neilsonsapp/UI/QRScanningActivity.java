@@ -29,7 +29,6 @@ public class QRScanningActivity extends AppCompatActivity implements BarcodeRead
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
-
         barcodeReader = (BarcodeReader) getSupportFragmentManager().findFragmentById(R.id.barcode_fragment);
     }
 
@@ -48,7 +47,6 @@ public class QRScanningActivity extends AppCompatActivity implements BarcodeRead
                         .putExtras(bundle));
             }
         });
-
     }
 
     @Override
@@ -76,12 +74,10 @@ public class QRScanningActivity extends AppCompatActivity implements BarcodeRead
 
     @Override
     public void onBitmapScanned(SparseArray<Barcode> sparseArray) {
-
     }
 
     @Override
     public void onScanError(String errorMessage) {
-
     }
 
     @Override
