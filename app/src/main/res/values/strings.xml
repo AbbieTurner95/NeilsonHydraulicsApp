@@ -2,4 +2,11 @@
     <string name="app_name">Neilson Hydraulics</string>
     <string name="scan_qr_code">Scan QR Code</string>
     <string name="scan_a_image">Scan a Image</string>
+    <string name="name_header">Name :</string>
+    <string name="company_header">Company :</string>
+    <string name="contact_number_header">Contact Number :</string>
+    <string name="email_header">Email :</string>
+    <string name="enter_email_body_header">Enter email body :</string>
+    <string name="send_btn">SEND</string>
+    <string name="qr_code_information">QR code information :</string>
 </resources>
