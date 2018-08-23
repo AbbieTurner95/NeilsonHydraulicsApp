@@ -33,42 +33,42 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.qr_button)
     Button qr_button;
 
-    public static final int IMAGE_CODE=100;
-    public static final String IMAGE_URL="image_url";
+    public static final int IMAGE_CODE = 100;
+    public static final String IMAGE_URL = "image_url";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
     }
 
     @OnClick(R.id.facebook)
-    public void startFacebook(){
+    public void startFacebook() {
         startActivity(Utils.getOpenFacebookIntent(this));
     }
 
     @OnClick(R.id.linkinin)
-    public void startLinkedIn(){
+    public void startLinkedIn() {
         Utils.getOpenLinkedInIntent(this);
     }
 
     @OnClick(R.id.twitter)
-    public void startTwitter(){
+    public void startTwitter() {
         startActivity(Utils.getOpenTwitterIntent(this));
     }
 
     @OnClick(R.id.take_pic_button)
-    public void fetchImage(){
+    public void fetchImage() {
         Dexter.withActivity(this)
-                .withPermissions(Manifest.permission.RECORD_AUDIO,Manifest.permission.CAMERA,Manifest.permission.READ_EXTERNAL_STORAGE)
+                .withPermissions(Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO,
+                        Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 .withListener(new MultiplePermissionsListener() {
                     @Override
                     public void onPermissionsChecked(MultiplePermissionsReport report) {
-                        if (report.areAllPermissionsGranted()){
-                            Pix.start(MainActivity.this,IMAGE_CODE);
-                        }else{
+                        if (report.areAllPermissionsGranted()) {
+                            Pix.start(MainActivity.this, IMAGE_CODE);
+                        } else if (report.isAnyPermissionPermanentlyDenied()) {
                             Utils.goToImageSettings(MainActivity.this);
                         }
                     }
@@ -84,13 +84,13 @@ public class MainActivity extends AppCompatActivity {
 
 
     @OnClick(R.id.qr_button)
-    public void startQrScanning(){
+    public void startQrScanning() {
         Dexter.withActivity(this)
                 .withPermission(Manifest.permission.CAMERA)
                 .withListener(new PermissionListener() {
                     @Override
                     public void onPermissionGranted(PermissionGrantedResponse response) {
-                        startActivity(new Intent(getApplicationContext(),QRScanningActivity.class));
+                        startActivity(new Intent(getApplicationContext(), QRScanningActivity.class));
                     }
 
                     @Override
@@ -105,7 +105,6 @@ public class MainActivity extends AppCompatActivity {
                 })
                 .onSameThread()
                 .check();
-
     }
 
     @Override
@@ -113,13 +112,11 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == Activity.RESULT_OK && requestCode == IMAGE_CODE) {
             ArrayList<String> returnValue = data.getStringArrayListExtra(Pix.IMAGE_RESULTS);
-            Toast.makeText(this, ""+returnValue.get(0), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "" + returnValue.get(0), Toast.LENGTH_SHORT).show();
 
-            //start messaging activity
-            Bundle bundle=new Bundle();
-            bundle.putBoolean(QRScanningActivity.IS_BARCODE,false);
-            bundle.putString(IMAGE_URL,returnValue.get(0));
-            startActivity(new Intent(this,SendMessageActivity.class)
+            Bundle bundle = new Bundle();
+            bundle.putString(IMAGE_URL, returnValue.get(0));
+            startActivity(new Intent(this, ImageActivity.class)
                     .putExtras(bundle));
         }
     }

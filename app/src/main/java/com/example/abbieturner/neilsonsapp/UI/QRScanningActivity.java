@@ -18,23 +18,19 @@ public class QRScanningActivity extends AppCompatActivity implements BarcodeRead
 
     private BarcodeReader barcodeReader;
 
-    //Rec Var
-    public static final String TAG=QRScanningActivity.class.getSimpleName();
-    public static final String BARCODE_RESULT="barcode_result";
-    public static final String IS_BARCODE="is_barcode";
+    public static final String TAG = QRScanningActivity.class.getSimpleName();
+    public static final String BARCODE_RESULT = "barcode_result";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_qr);
+        setContentView(R.layout.activity_qr_scanning);
 
-        //Hide Action Bar
-        if (getSupportActionBar()!=null){
+        if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
 
         barcodeReader = (BarcodeReader) getSupportFragmentManager().findFragmentById(R.id.barcode_fragment);
-
     }
 
     @Override
@@ -46,10 +42,9 @@ public class QRScanningActivity extends AppCompatActivity implements BarcodeRead
             @Override
             public void run() {
                 //Toast.makeText(getApplicationContext(), "Barcode: " + barcode.displayValue, Toast.LENGTH_SHORT).show();
-                Bundle bundle=new Bundle();
+                Bundle bundle = new Bundle();
                 bundle.putString(BARCODE_RESULT, barcode.displayValue);
-                bundle.putBoolean(IS_BARCODE,true);
-                startActivity(new Intent(getApplicationContext(),SendMessageActivity.class)
+                startActivity(new Intent(getApplicationContext(), QrActivity.class)
                         .putExtras(bundle));
             }
         });
@@ -70,10 +65,10 @@ public class QRScanningActivity extends AppCompatActivity implements BarcodeRead
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                //Toast.makeText(getApplicationContext(), "Barcodes: " + finalCodes, Toast.LENGTH_SHORT).show();
-                Bundle bundle=new Bundle();
+                Bundle bundle = new Bundle();
                 bundle.putString(BARCODE_RESULT, finalCodes);
-                startActivity(new Intent(getApplicationContext(),SendMessageActivity.class));
+                startActivity(new Intent(getApplicationContext(), QrActivity.class)
+                        .putExtras(bundle));
 
             }
         });

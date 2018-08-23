@@ -86,15 +86,6 @@ public class Utils {
         return input != null && !input.trim().isEmpty();
     }
 
-
-    public static final boolean checkError(EditText editText) {
-        if (!isValid(editText.getText().toString())) {
-            editText.setError(editText.getContext().getString(R.string.empty_field));
-            return false;
-        }
-        return true;
-    }
-
     public static boolean isEmailValid(String email) {
         boolean isValid = false;
 
@@ -107,6 +98,14 @@ public class Utils {
     public static final boolean checkEmail(EditText email) {
         if (!isEmailValid(email.getText().toString())) {
             email.setError("Check Email Address is correct");
+            return false;
+        }
+        return true;
+    }
+
+    public static final boolean checkError(EditText editText) {
+        if (!isValid(editText.getText().toString())) {
+            editText.setError(editText.getContext().getString(R.string.empty_field));
             return false;
         }
         return true;
