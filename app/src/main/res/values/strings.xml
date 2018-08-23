@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Neilson Hydraulics</string>
     <string name="scan_qr_code">Scan QR Code</string>
     <string name="scan_a_image">Scan a Image</string>
@@ -9,4 +9,9 @@
     <string name="enter_email_body_header">Enter email body :</string>
     <string name="send_btn">SEND</string>
     <string name="qr_code_information">QR code information :</string>
+    <string name="settings">Settings</string>
+    <string name="upload_images">Allow This permissions to can upload images</string>
+    <string name="cancel" tools:ignore="ButtonCase">cancel</string>
+    <string name="empty_field">This Field is empty</string>
+    <string name="send_msg_by">Send Message By</string>
 </resources>
