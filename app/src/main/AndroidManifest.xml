@@ -25,7 +25,6 @@
         <activity android:name=".UI.QRScanningActivity" />
         <activity android:name=".UI.ImageActivity" />
         <activity android:name=".UI.QrActivity" />
-        <activity android:name=".UI.GoogleMaps"></activity>
     </application>
 
 </manifest>

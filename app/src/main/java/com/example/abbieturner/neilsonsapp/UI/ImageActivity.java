@@ -61,7 +61,10 @@ public class ImageActivity extends AppCompatActivity {
                 break;
 
             case R.id.googlemaps:
-                //OPEN PAGE SHOW NEILSONS ON MAPS
+                Uri gmmIntentUri = Uri.parse("google.streetview:cbll=46.414382,10.013988");
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                mapIntent.setPackage("com.google.android.apps.maps");
+                startActivity(mapIntent);
         }
         return super.onOptionsItemSelected(item);
     }
