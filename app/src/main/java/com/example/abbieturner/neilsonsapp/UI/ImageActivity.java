@@ -61,10 +61,8 @@ public class ImageActivity extends AppCompatActivity {
                 break;
 
             case R.id.googlemaps:
-                Uri gmmIntentUri = Uri.parse("google.streetview:cbll=46.414382,10.013988");
-                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
-                mapIntent.setPackage("com.google.android.apps.maps");
-                startActivity(mapIntent);
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:53.3880982,-1.6430196?q=53.3880982,-1.6430196(Neilson Hydraulics)"));
+                startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
